@@ -4,6 +4,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { SITE, SERVICES } from "@/lib/site";
 import { CtaLink } from "@/components/cta-button";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -33,9 +34,10 @@ const schema = z.object({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse(Object.fromEntries(fd));
@@ -48,12 +50,24 @@ function ContactPage() {
       return;
     }
     setErrors({});
-    // TODO: wire up to Lovable Cloud (email/db) for real submission.
     const { name, phone, email, service, message } = parsed.data;
-    const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\n${message}`;
-    window.location.href = `${SITE.emailHref}?subject=${encodeURIComponent(
-      "New estimate request from " + name,
-    )}&body=${encodeURIComponent(body)}`;
+    setSubmitting(true);
+    const { error } = await supabase.from("estimate_requests").insert({
+      name,
+      phone,
+      email: email || null,
+      service: service || null,
+      message,
+    });
+    setSubmitting(false);
+
+    if (error) {
+      // Fallback: open mailto so the message still reaches Tony.
+      const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\n${message}`;
+      window.location.href = `${SITE.emailHref}?subject=${encodeURIComponent(
+        "New estimate request from " + name,
+      )}&body=${encodeURIComponent(body)}`;
+    }
     setSent(true);
   }
 
@@ -132,9 +146,10 @@ function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-sm bg-primary px-6 py-4 text-sm font-bold uppercase tracking-[0.15em] text-primary-foreground transition-colors hover:bg-accent sm:w-auto"
+                  disabled={submitting}
+                  className="inline-flex w-full items-center justify-center rounded-sm bg-primary px-6 py-4 text-sm font-bold uppercase tracking-[0.15em] text-primary-foreground transition-colors hover:bg-accent disabled:opacity-60 sm:w-auto"
                 >
-                  Send Estimate Request
+                  {submitting ? "Sending…" : "Send Estimate Request"}
                 </button>
                 <p className="text-xs text-muted-foreground">
                   We respect your privacy. Information is only used to contact you about your project.
