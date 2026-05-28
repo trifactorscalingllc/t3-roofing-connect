@@ -8,7 +8,7 @@ import { CtaLink } from "@/components/cta-button";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact T3 — Free Roofing Estimate in Two Rivers, WI" },
+      { title: "Contact T3 · Free Roofing Estimate in Two Rivers, WI" },
       {
         name: "description",
         content:
@@ -66,7 +66,7 @@ function ContactPage() {
             Let's talk<br /><span className="text-accent">about your project.</span>
           </h1>
           <p className="mt-6 max-w-xl text-cream/80 text-lg">
-            Call directly for the fastest response — or send us a note and we'll
+            Call directly for the fastest response, or send us a note and we'll
             get back to you within one business day.
           </p>
           <div className="mt-8">

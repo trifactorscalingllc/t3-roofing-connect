@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "T3 Roofing & Construction — Two Rivers, WI" },
+      { title: "T3 Roofing & Construction | Two Rivers, WI" },
       {
         name: "description",
         content:
@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "T3 Roofing & Construction" },
       { property: "og:site_name", content: "T3 Roofing & Construction" },
-      { property: "og:title", content: "T3 Roofing & Construction — Two Rivers, WI" },
+      { property: "og:title", content: "T3 Roofing & Construction | Two Rivers, WI" },
       {
         property: "og:description",
         content:

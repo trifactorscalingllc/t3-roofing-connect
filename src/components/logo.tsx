@@ -123,7 +123,7 @@ export function LogoLockup({
 /** Link-wrapped lockup for nav use. */
 export function LogoLink({ tone = "light" }: { tone?: Tone }) {
   return (
-    <Link to="/" className="group" aria-label="T3 Roofing & Construction — home">
+    <Link to="/" className="group" aria-label="T3 Roofing & Construction, home">
       <LogoLockup
         tone={tone}
         className="transition-opacity group-hover:opacity-80"

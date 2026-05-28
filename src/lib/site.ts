@@ -38,12 +38,12 @@ export const SERVICES = [
     slug: "re-roofs",
     title: "Re-Roofs",
     short: "Complete roof replacement, end to end.",
-    long: "From the dumpster on the driveway to the final cleanup with a magnet for stray nails — we manage the whole project so you don't have to.",
+    long: "From the dumpster on the driveway to the final cleanup with a magnet for stray nails. We manage the whole project so you don't have to.",
   },
   {
     slug: "roof-repairs",
     title: "Roof Repairs",
-    short: "Leaks, storm damage, flashing — fixed fast.",
+    short: "Leaks, storm damage, flashing. Fixed fast.",
     long: "Active leak? Storm just rolled through? Call. We answer. We come look. We give you a straight answer about what it needs.",
   },
   {
@@ -55,14 +55,14 @@ export const SERVICES = [
   {
     slug: "siding",
     title: "Siding",
-    short: "Vinyl, LP, fiber cement — installed clean.",
+    short: "Vinyl, LP, fiber cement. Installed clean.",
     long: "New siding, re-siding, and storm-damage replacement. Tight seams, straight lines, proper flashing around every penetration.",
   },
   {
     slug: "flooring",
     title: "Flooring",
-    short: "Hardwood, LVP, tile — interior work too.",
-    long: "We don't only work outside. Subfloor, underlayment and finish flooring — installed level and tight.",
+    short: "Hardwood, LVP, tile. Interior work too.",
+    long: "We don't only work outside. Subfloor, underlayment and finish flooring, installed level and tight.",
   },
   {
     slug: "insulation",

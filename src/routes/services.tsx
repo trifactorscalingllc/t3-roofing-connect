@@ -6,7 +6,7 @@ import { CtaLink } from "@/components/cta-button";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Roofing, Siding & Construction | T3 Roofing" },
+      { title: "Roofing, Siding & Construction Services | T3 Roofing" },
       {
         name: "description",
         content:
@@ -70,7 +70,7 @@ function ServicesPage() {
           <div>
             <h2 className="text-3xl md:text-4xl uppercase">Don't see it listed?</h2>
             <p className="mt-2 text-foreground/70 max-w-xl">
-              If it has to do with a roof, a wall, or a structure on the Lakeshore — pick up
+              If it has to do with a roof, a wall, or a structure on the Lakeshore, pick up
               the phone. We'll tell you straight whether we can do it.
             </p>
           </div>

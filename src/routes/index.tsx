@@ -8,13 +8,13 @@ import crewOnRoof from "@/assets/crew-on-roof.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "T3 Roofing & Construction — Two Rivers, WI Roofer" },
+      { title: "T3 Roofing & Construction | Two Rivers, WI Roofer" },
       {
         name: "description",
         content:
-          "Roofing, siding and construction on the Wisconsin Lakeshore. The roofer who actually answers the phone. Free estimates — call (920) 304-6859.",
+          "Roofing, siding and construction on the Wisconsin Lakeshore. The roofer who actually answers the phone. Free estimates. Call (920) 304-6859.",
       },
-      { property: "og:title", content: "T3 Roofing & Construction — Two Rivers, WI" },
+      { property: "og:title", content: "T3 Roofing & Construction | Two Rivers, WI" },
       {
         property: "og:description",
         content: "The roofer who actually answers the phone. Free estimates in Two Rivers, WI.",
@@ -42,7 +42,7 @@ function Index() {
               <span className="text-accent">We show up.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-foreground/75">
-              Roofing, siding and construction for the Wisconsin Lakeshore — done
+              Roofing, siding and construction for the Wisconsin Lakeshore, done
               right the first time. No voicemail tag. No "we'll get back to you next week."
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -60,7 +60,7 @@ function Index() {
                   <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                 ))}
               </div>
-              <span>5.0 on Yelp · "Did great job!" — Julio L.</span>
+              <span>5.0 on Yelp · "Did great job!" Julio L.</span>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-3 md:px-8">
           {[
             { icon: PhoneCall, title: "We answer the phone", body: "Not voicemail. Not a call center. A real person from Two Rivers." },
-            { icon: Clock, title: "We show up fast", body: "Most calls get an on-site visit the same week — emergencies the same day." },
+            { icon: Clock, title: "We show up fast", body: "Most calls get an on-site visit the same week. Emergencies the same day." },
             { icon: Star, title: "5-star local", body: "Owner-operated. Our name is on every roof we put up." },
           ].map((p) => (
             <div key={p.title} className="flex gap-4">
@@ -179,7 +179,7 @@ function Index() {
             <div className="border-l-4 border-accent bg-card p-8 md:p-12">
               <h3 className="text-3xl uppercase">Get a free estimate</h3>
               <p className="mt-3 text-foreground/75">
-                Tell us about the project. We'll give you a straight answer — usually
+                Tell us about the project. We'll give you a straight answer, usually
                 within 24 hours.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">

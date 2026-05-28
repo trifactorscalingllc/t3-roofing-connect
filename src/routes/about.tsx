@@ -7,7 +7,7 @@ import crew from "@/assets/crew-on-roof.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About T3 — Owner-Operated Roofer in Two Rivers, WI" },
+      { title: "About T3 · Owner-Operated Roofer in Two Rivers, WI" },
       {
         name: "description",
         content:
@@ -36,11 +36,11 @@ function AboutPage() {
               <p>
                 T3 Roofing &amp; Construction is owner-operated by {SITE.owner} out of
                 Two Rivers, Wisconsin. We started T3 because the Lakeshore deserved a
-                roofer who answered the phone — and showed up when they said they would.
+                roofer who answered the phone and showed up when they said they would.
               </p>
               <p>
                 Every job is run by Tony personally. Every estimate is honest. Every
-                roof is built like our name is on the sign in the front yard — because
+                roof is built like our name is on the sign in the front yard. Because
                 it is.
               </p>
               <p>
@@ -59,7 +59,7 @@ function AboutPage() {
             <div className="absolute -right-4 -bottom-4 hidden h-full w-full border-2 border-accent md:block" />
             <img
               src={crew}
-              alt="T3 roofing crew working safely on a Wisconsin home"
+              alt="Roofing crew working safely on a Wisconsin home"
               loading="lazy"
               className="relative aspect-[4/5] w-full object-cover"
             />
@@ -71,7 +71,7 @@ function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-3 md:px-8">
           {[
             { stat: "5.0", label: "Star rating on Yelp & Birdeye" },
-            { stat: "10 min", label: "Typical response time on local calls" },
+            { stat: "10 min", label: "On-site on a recent Two Rivers call (per Yelp)" },
             { stat: "100%", label: "Owner-operated, local to Two Rivers" },
           ].map((s) => (
             <div key={s.label} className="border-l-2 border-accent pl-6">
