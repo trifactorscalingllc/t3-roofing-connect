@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { CtaLink } from "@/components/cta-button";
+import realRoof from "@/assets/t3-real-roof-two-rivers.jpg";
 import heroRoof from "@/assets/hero-roof.jpg";
 import crew from "@/assets/crew-on-roof.jpg";
 import home from "@/assets/home-exterior.jpg";
@@ -9,9 +10,10 @@ import before from "@/assets/before-roof.jpg";
 import siding from "@/assets/siding.jpg";
 import construction from "@/assets/new-construction.jpg";
 
-// TODO: replace these with real T3 project photos once client provides access to FB/Yelp galleries.
+// Lead tile is a real completed T3 job in Two Rivers. Remaining tiles are
+// representative placeholders — swap for real client photos as they come in.
 const PHOTOS = [
-  { src: home, label: "Lakeshore home re-roof", tag: "Re-roof", span: "md:col-span-2 md:row-span-2" },
+  { src: realRoof, label: "Architectural shingle re-roof · Two Rivers", tag: "Real job", span: "md:col-span-2 md:row-span-2" },
   { src: heroRoof, label: "Architectural shingle install", tag: "Shingles", span: "" },
   { src: crew, label: "Crew working safe", tag: "On-site", span: "" },
   { src: before, label: "Storm damage repair", tag: "Before", span: "" },

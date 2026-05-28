@@ -1,16 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { LogoLockup } from "@/components/logo";
 
 export function SiteFooter() {
   return (
     <footer className="bg-[var(--ink)] text-cream">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-4 md:px-8">
         <div className="md:col-span-2">
-          <div className="text-5xl font-[var(--font-display)] leading-none">T3</div>
-          <div className="mt-2 text-xs uppercase tracking-[0.25em] text-cream/60">
-            Roofing &amp; Construction
-          </div>
+          <LogoLockup tone="dark" markSize={52} />
           <p className="mt-6 max-w-sm text-cream/80">
             Owner-operated by {SITE.owner}. Serving the Wisconsin Lakeshore with
             roofing, siding and construction work done the right way.

@@ -17,6 +17,7 @@ import "@fontsource/barlow/700.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobilePhoneBar } from "@/components/mobile-phone-bar";
+import { SITE, SERVICES } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -102,6 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/favicon.svg" },
     ],
     scripts: [
       {
@@ -109,19 +112,50 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "RoofingContractor",
+          "@id": "https://t3roofing.com/#business",
           name: "T3 Roofing & Construction",
-          telephone: "+1-920-600-1297",
-          email: "ex.dynamite@hotmail.com",
+          description:
+            "Owner-operated roofing, siding and construction serving Two Rivers and the Wisconsin Lakeshore. The roofer who actually answers the phone.",
+          telephone: SITE.phoneHref.replace("tel:", ""),
+          email: SITE.email,
+          founder: SITE.owner,
+          image: "/favicon.svg",
+          priceRange: "$$",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "2010 12th St",
-            addressLocality: "Two Rivers",
-            addressRegion: "WI",
-            postalCode: "54241",
+            streetAddress: SITE.address.street,
+            addressLocality: SITE.address.city,
+            addressRegion: SITE.address.state,
+            postalCode: SITE.address.zip,
             addressCountry: "US",
           },
-          areaServed: "Manitowoc County, WI",
-          priceRange: "$$",
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: SITE.geo.lat,
+            longitude: SITE.geo.lng,
+          },
+          areaServed: SITE.serviceArea.map((city) => ({
+            "@type": "City",
+            name: `${city}, WI`,
+          })),
+          sameAs: [SITE.social.facebook, SITE.social.yelp],
+          makesOffer: SERVICES.map((s) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: s.title },
+          })),
+          openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            opens: "07:00",
+            closes: "18:00",
+          },
         }),
       },
     ],

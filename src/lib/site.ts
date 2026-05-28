@@ -14,6 +14,11 @@ export const SITE = {
   },
   serviceArea: ["Two Rivers", "Manitowoc", "Mishicot", "Kewaunee", "Cleveland", "Newton"],
   tagline: "We pick up. We show up.",
+  geo: { lat: 44.1539, lng: -87.5734 }, // Two Rivers, WI
+  social: {
+    facebook: "https://www.facebook.com/T3roofinginc/",
+    yelp: "https://www.yelp.com/biz/t3-roofing-construction-two-rivers-2",
+  },
 } as const;
 
 export const SERVICES = [
