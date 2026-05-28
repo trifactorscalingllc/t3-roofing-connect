@@ -12,10 +12,10 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get a free roofing or construction estimate from T3 Roofing & Construction. Call (920) 600-1297 or send a message.",
+          "Get a free roofing or construction estimate from T3 Roofing & Construction. Call (920) 304-6859 or send a message.",
       },
       { property: "og:title", content: "Contact T3 Roofing & Construction" },
-      { property: "og:description", content: "Free estimates across the Wisconsin Lakeshore. Call (920) 600-1297." },
+      { property: "og:description", content: "Free estimates across the Wisconsin Lakeshore. Call (920) 304-6859." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],

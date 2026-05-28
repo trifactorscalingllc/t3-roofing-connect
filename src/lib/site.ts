@@ -2,8 +2,8 @@ export const SITE = {
   name: "T3 Roofing & Construction",
   shortName: "T3",
   owner: "Tony Elvetici",
-  phoneDisplay: "(920) 600-1297",
-  phoneHref: "tel:+19206001297",
+  phoneDisplay: "(920) 304-6859",
+  phoneHref: "tel:+19203046859",
   email: "ex.dynamite@hotmail.com",
   emailHref: "mailto:ex.dynamite@hotmail.com",
   address: {

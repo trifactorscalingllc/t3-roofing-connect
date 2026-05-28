@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Roofing, siding and construction on the Wisconsin Lakeshore. The roofer who actually answers the phone. Free estimates — call (920) 600-1297.",
+          "Roofing, siding and construction on the Wisconsin Lakeshore. The roofer who actually answers the phone. Free estimates — call (920) 304-6859.",
       },
       { property: "og:title", content: "T3 Roofing & Construction — Two Rivers, WI" },
       {

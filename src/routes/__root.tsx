@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Owner-operated roofing, siding & construction on the Wisconsin Lakeshore. We answer the phone and we show up. Call (920) 600-1297.",
+          "Owner-operated roofing, siding & construction on the Wisconsin Lakeshore. We answer the phone and we show up. Call (920) 304-6859.",
       },
       { name: "author", content: "T3 Roofing & Construction" },
       { property: "og:site_name", content: "T3 Roofing & Construction" },
