@@ -34,6 +34,7 @@ const schema = z.object({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [usedFallback, setUsedFallback] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -63,6 +64,7 @@ function ContactPage() {
 
     if (error) {
       // Fallback: open mailto so the message still reaches Tony.
+      setUsedFallback(true);
       const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\n${message}`;
       window.location.href = `${SITE.emailHref}?subject=${encodeURIComponent(
         "New estimate request from " + name,
@@ -101,11 +103,23 @@ function ContactPage() {
               <div className="mt-8 flex items-start gap-3 border-l-4 border-accent bg-card p-6">
                 <CheckCircle2 className="h-6 w-6 flex-none text-accent" />
                 <div>
-                  <div className="font-semibold uppercase tracking-wider">Your email is ready to send.</div>
-                  <p className="mt-1 text-sm text-foreground/70">
-                    We just opened your email app with the message pre-filled. Or call
-                    Tony directly at {SITE.phoneDisplay} for the fastest response.
-                  </p>
+                  {usedFallback ? (
+                    <>
+                      <div className="font-semibold uppercase tracking-wider">Your email is ready to send.</div>
+                      <p className="mt-1 text-sm text-foreground/70">
+                        We opened your email app with the message pre-filled, just hit send.
+                        Or call Tony directly at {SITE.phoneDisplay} for the fastest response.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <div className="font-semibold uppercase tracking-wider">Got it, thanks.</div>
+                      <p className="mt-1 text-sm text-foreground/70">
+                        Your request is in. We'll reach out within one business day. For the
+                        fastest response, call Tony directly at {SITE.phoneDisplay}.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             ) : (

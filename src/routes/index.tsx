@@ -1,7 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, ArrowRight, PhoneCall, Clock, Star, MapPin } from "lucide-react";
+import { Phone, ArrowRight, Star } from "lucide-react";
 import { SITE, SERVICES } from "@/lib/site";
 import { CtaLink } from "@/components/cta-button";
+import {
+  HowItWorks,
+  StatsBand,
+  WhyChooseUs,
+  ProjectsPreview,
+  ServiceAreaMap,
+  Faq,
+} from "@/components/home-sections";
 import heroRoof from "@/assets/hero-roof.jpg";
 import crewOnRoof from "@/assets/crew-on-roof.jpg";
 
@@ -77,24 +85,11 @@ function Index() {
         </div>
       </section>
 
-      {/* PROMISE BAR */}
-      <section className="bg-[var(--ink)] text-cream">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-3 md:px-8">
-          {[
-            { icon: PhoneCall, title: "We answer the phone", body: "Not voicemail. Not a call center. A real person from Two Rivers." },
-            { icon: Clock, title: "We show up fast", body: "Most calls get an on-site visit the same week. Emergencies the same day." },
-            { icon: Star, title: "5-star local", body: "Owner-operated. Our name is on every roof we put up." },
-          ].map((p) => (
-            <div key={p.title} className="flex gap-4">
-              <p.icon className="h-8 w-8 flex-none text-accent" />
-              <div>
-                <h3 className="text-2xl uppercase">{p.title}</h3>
-                <p className="mt-1 text-cream/70 text-sm">{p.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* HOW IT WORKS */}
+      <HowItWorks />
+
+      {/* TRUST / STATS */}
+      <StatsBand />
 
       {/* SERVICES PREVIEW */}
       <section className="bg-background">
@@ -132,6 +127,12 @@ function Index() {
         </div>
       </section>
 
+      {/* WHY CHOOSE US */}
+      <WhyChooseUs />
+
+      {/* PROJECTS */}
+      <ProjectsPreview />
+
       {/* TESTIMONIAL */}
       <section
         className="relative bg-[var(--ink)] text-cream"
@@ -157,32 +158,22 @@ function Index() {
         </div>
       </section>
 
-      {/* SERVICE AREA */}
+      {/* SERVICE AREA + MAP */}
+      <ServiceAreaMap />
+
+      {/* ESTIMATE CTA */}
       <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-            <div>
-              <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">Where we work</div>
-              <h2 className="mt-3 text-5xl md:text-6xl uppercase">The Lakeshore</h2>
-              <p className="mt-6 text-foreground/75 max-w-md">
-                Based in Two Rivers and proudly serving Manitowoc County and the surrounding
-                Lake Michigan shoreline communities.
-              </p>
-              <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3">
-                {SITE.serviceArea.map((c) => (
-                  <li key={c} className="flex items-center gap-2 text-foreground">
-                    <MapPin className="h-4 w-4 text-accent" /> {c}, WI
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border-l-4 border-accent bg-card p-8 md:p-12">
-              <h3 className="text-3xl uppercase">Get a free estimate</h3>
-              <p className="mt-3 text-foreground/75">
-                Tell us about the project. We'll give you a straight answer, usually
-                within 24 hours.
-              </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mx-auto max-w-7xl px-4 py-20 md:px-8">
+          <div className="border-l-4 border-accent bg-card p-8 md:p-14">
+            <div className="grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl uppercase leading-[0.95]">Get a free estimate</h2>
+                <p className="mt-4 max-w-md text-foreground/75">
+                  Tell us about the project. We'll give you a straight answer, usually
+                  within 24 hours.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
                 <CtaLink href={SITE.phoneHref} variant="primary">
                   <Phone className="h-4 w-4" />
                   {SITE.phoneDisplay}
@@ -195,6 +186,9 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <Faq />
     </>
   );
 }
