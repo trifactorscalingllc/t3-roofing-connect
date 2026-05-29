@@ -1,16 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import {
-  Phone,
-  PhoneCall,
-  Clock,
-  ClipboardCheck,
-  CalendarCheck,
-  Hammer,
-  ShieldCheck,
-  HardHat,
-  ArrowRight,
-  MapPin,
-} from "lucide-react";
+import { Phone, ArrowRight, MapPin } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { PROJECTS } from "@/lib/projects";
 import { CtaLink } from "@/components/cta-button";
@@ -25,22 +14,18 @@ import {
 
 const STEPS = [
   {
-    icon: Phone,
     title: "Call or request an estimate",
     body: "Reach a real person at " + SITE.phoneDisplay + ", or send the form. No phone tree, no call center.",
   },
   {
-    icon: ClipboardCheck,
     title: "Free on-site inspection",
     body: "We come look at the actual roof, usually within the week. Same day for active leaks.",
   },
   {
-    icon: CalendarCheck,
     title: "Straight quote & schedule",
     body: "An honest, written quote and a real start date. No pressure, no mystery line items.",
   },
   {
-    icon: Hammer,
     title: "We build it & clean up",
     body: "Tony runs the job start to finish, then we sweep the property with a magnet for stray nails.",
   },
@@ -60,12 +45,9 @@ export function HowItWorks() {
         <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s, i) => (
             <div key={s.title} className="relative bg-background p-8">
-              <div className="flex items-center gap-4">
-                <span className="flex h-12 w-12 flex-none items-center justify-center bg-accent text-white font-[var(--font-display)] text-2xl leading-none">
-                  {i + 1}
-                </span>
-                <s.icon className="h-7 w-7 text-accent" />
-              </div>
+              <span className="flex h-12 w-12 flex-none items-center justify-center bg-accent text-white font-[var(--font-display)] text-2xl leading-none">
+                {i + 1}
+              </span>
               <h3 className="mt-5 text-2xl uppercase leading-tight">{s.title}</h3>
               <p className="mt-2 text-sm text-foreground/70">{s.body}</p>
             </div>
@@ -82,54 +64,22 @@ export function HowItWorks() {
   );
 }
 
-/* ------------------------------------------------------------------- Stats band */
-
-const STATS = [
-  { stat: "5.0", label: "Rating on Yelp & Birdeye" },
-  { stat: "10 min", label: "On-site on a recent Two Rivers call (per Yelp)" },
-  { stat: "100%", label: "Owner-operated, local to Two Rivers" },
-  { stat: "Free", label: "Estimates, every time" },
-];
-
-export function StatsBand() {
-  return (
-    <section className="bg-navy text-cream">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 md:grid-cols-4 md:px-8">
-        {STATS.map((s) => (
-          <div key={s.label} className="border-l-2 border-accent pl-6">
-            <div className="text-5xl md:text-6xl text-accent font-[var(--font-display)] leading-none">
-              {s.stat}
-            </div>
-            <div className="mt-3 text-sm uppercase tracking-wider text-muted-on-dark">
-              {s.label}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 /* ---------------------------------------------------------------- Why choose us */
 
 const REASONS = [
   {
-    icon: PhoneCall,
     title: "We answer the phone",
     body: "A real person from Two Rivers picks up. Not voicemail, not a call center three states away.",
   },
   {
-    icon: Clock,
     title: "We show up fast",
     body: "Most calls get an on-site visit the same week. Active leaks and storm damage, the same day when we can.",
   },
   {
-    icon: HardHat,
     title: "Owner-operated",
     body: "Tony runs every job personally. The name on the truck is the name on your estimate.",
   },
   {
-    icon: ShieldCheck,
     title: "Licensed, insured & clean",
     body: "Licensed and insured work, and we leave your yard cleaner than we found it.",
   },
@@ -139,25 +89,22 @@ export function WhyChooseUs() {
   return (
     <section className="bg-background">
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <div className="text-[0.8125rem] uppercase tracking-[0.15em] text-accent font-semibold">
-              Why T3
-            </div>
-            <h2 className="mt-3 text-5xl md:text-6xl uppercase">Why choose us</h2>
+        <div className="max-w-2xl">
+          <div className="text-[0.8125rem] uppercase tracking-[0.15em] text-accent font-semibold">
+            Why T3
           </div>
-          <p className="max-w-md text-foreground/70">
+          <h2 className="mt-3 text-5xl md:text-6xl uppercase">Why choose us</h2>
+          <p className="mt-5 text-lg text-foreground/75">
             The Lakeshore deserved a roofer who answers and shows up. That is the
             whole reason T3 exists.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-x-12 gap-y-10 border-t border-border pt-12 sm:grid-cols-2">
           {REASONS.map((r) => (
-            <div key={r.title} className="bg-surface p-7 border border-border border-t-2 border-t-accent">
-              <r.icon className="h-9 w-9 text-accent" />
-              <h3 className="mt-5 text-2xl uppercase leading-tight">{r.title}</h3>
-              <p className="mt-2 text-sm text-foreground/70">{r.body}</p>
+            <div key={r.title} className="border-l-2 border-accent pl-6">
+              <h3 className="text-2xl uppercase leading-tight">{r.title}</h3>
+              <p className="mt-2 text-foreground/70">{r.body}</p>
             </div>
           ))}
         </div>

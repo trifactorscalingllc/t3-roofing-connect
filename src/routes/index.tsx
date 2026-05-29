@@ -4,7 +4,6 @@ import { SERVICES } from "@/lib/site";
 import { Hero } from "@/components/hero";
 import {
   HowItWorks,
-  StatsBand,
   WhyChooseUs,
   ProjectsPreview,
   ServiceAreaMap,
@@ -41,9 +40,6 @@ function Index() {
 
       {/* HOW IT WORKS */}
       <HowItWorks />
-
-      {/* TRUST / STATS */}
-      <StatsBand />
 
       {/* SERVICES PREVIEW — dark (ink) block */}
       <section className="bg-ink text-cream">
