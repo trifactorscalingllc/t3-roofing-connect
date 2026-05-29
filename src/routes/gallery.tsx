@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { CtaLink } from "@/components/cta-button";
+import { PageHero } from "@/components/page-hero";
 import { PROJECTS } from "@/lib/projects";
 
 export const Route = createFileRoute("/gallery")({
@@ -24,16 +25,11 @@ export const Route = createFileRoute("/gallery")({
 function GalleryPage() {
   return (
     <>
-      <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-4 pt-20 pb-12 md:px-8 md:pt-28">
-          <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">Recent work</div>
-          <h1 className="mt-4 text-6xl md:text-7xl uppercase leading-[0.9]">Project Gallery</h1>
-          <p className="mt-6 max-w-2xl text-foreground/75">
-            A selection of recent work across the Lakeshore. More project photos
-            available on request.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Recent work"
+        title="Project Gallery"
+        subtitle="A selection of recent work across the Lakeshore. More project photos available on request."
+      />
 
       <section className="bg-background pb-20 md:pb-28">
         <div className="mx-auto max-w-7xl px-4 md:px-8">

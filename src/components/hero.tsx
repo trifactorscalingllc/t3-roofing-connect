@@ -74,7 +74,7 @@ export function Hero() {
                 <Star key={i} className="h-4 w-4 fill-accent text-accent" />
               ))}
             </div>
-            <span>5.0 on Yelp · "Did great job!" Julio L.</span>
+            <span>Rated 5.0 on Yelp &amp; Birdeye</span>
           </div>
         </div>
       </div>

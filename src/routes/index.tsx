@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SERVICES } from "@/lib/site";
 import { Hero } from "@/components/hero";
 import {
@@ -82,26 +82,6 @@ function Index() {
 
       {/* PROJECTS */}
       <ProjectsPreview />
-
-      {/* TESTIMONIAL — cream bordered card */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-4xl px-4 py-20 md:px-8 md:py-28">
-          <div className="border border-border border-t-2 border-t-accent bg-surface p-8 md:p-14 text-center">
-            <div className="mb-6 flex justify-center">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-accent text-accent" />
-              ))}
-            </div>
-            <blockquote className="text-3xl md:text-4xl uppercase leading-tight font-[var(--font-display)]">
-              "Called 7 different roofing places. T3 was the only one that picked up.
-              Arrived in 10 minutes. Did great job."
-            </blockquote>
-            <div className="mt-8 text-sm uppercase tracking-[0.25em] text-muted-foreground">
-              Julio Lopez · Yelp review
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA BAND — navy */}
       <CtaBand />

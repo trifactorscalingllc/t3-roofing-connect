@@ -4,6 +4,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { SITE, SERVICES } from "@/lib/site";
 import { CtaLink } from "@/components/cta-button";
+import { PageHero } from "@/components/page-hero";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/contact")({
@@ -75,23 +76,16 @@ function ContactPage() {
 
   return (
     <>
-      <section className="bg-[var(--ink)] text-cream">
-        <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-24">
-          <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">Free Estimate</div>
-          <h1 className="mt-4 text-6xl md:text-7xl uppercase leading-[0.9]">
-            Let's talk<br /><span className="text-accent">about your project.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-cream/80 text-lg">
-            Call directly for the fastest response, or send us a note and we'll
-            get back to you within one business day.
-          </p>
-          <div className="mt-8">
-            <CtaLink href={SITE.phoneHref} variant="outlineLight">
-              <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
-            </CtaLink>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Free Estimate"
+        title="Let's talk"
+        accent="about your project."
+        subtitle="Call directly for the fastest response, or send us a note and we'll get back to you within one business day."
+      >
+        <CtaLink href={SITE.phoneHref} variant="outlineLight">
+          <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
+        </CtaLink>
+      </PageHero>
 
       <section className="bg-background">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-[1.5fr_1fr] md:gap-16 md:px-8 md:py-24">

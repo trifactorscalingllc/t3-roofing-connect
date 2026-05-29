@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Check } from "lucide-react";
 import { SITE, SERVICES } from "@/lib/site";
 import { CtaLink } from "@/components/cta-button";
+import { PageHero } from "@/components/page-hero";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -24,18 +25,12 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   return (
     <>
-      <section className="bg-[var(--ink)] text-cream">
-        <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-          <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">What we do</div>
-          <h1 className="mt-4 text-6xl md:text-8xl uppercase leading-[0.9]">
-            Roofs, Walls,<br /><span className="text-accent">Everything Between.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-cream/75 text-lg">
-            From a single repair to a full new build, T3 handles the work end to
-            end. Below is what we do most.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="What we do"
+        title="Roofs, Walls,"
+        accent="Everything Between."
+        subtitle="From a single repair to a full new build, T3 handles the work end to end. Below is what we do most."
+      />
 
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-24">
