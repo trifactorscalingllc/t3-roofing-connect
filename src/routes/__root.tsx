@@ -189,9 +189,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col">
+      {/* bg-ink so any space below the footer on short pages matches the footer
+          (no cream gap); main no longer flex-grows, so the footer hugs content. */}
+      <div className="flex min-h-screen flex-col bg-ink">
         <SiteHeader />
-        <main className="flex-1 pb-16 md:pb-0">
+        <main className="pb-16 md:pb-0">
           <Outlet />
         </main>
         <SiteFooter />

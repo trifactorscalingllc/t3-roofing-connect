@@ -28,7 +28,7 @@ export function PageHero({
         className="absolute inset-0 h-full w-full object-cover opacity-20"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/95 to-[var(--ink)]/70" />
-      <div className="relative mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
         <div className="text-[0.8125rem] uppercase tracking-[0.15em] text-accent font-semibold">
           {eyebrow}
         </div>
