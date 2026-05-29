@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import heroWide from "@/assets/hero-lakeshore-wide.png";
+import heroWide from "@/assets/hero-lakeshore-wide.jpg";
 
 /**
  * Compact page-header band for inner routes. Reuses the home hero's lakeshore

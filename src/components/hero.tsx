@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Phone, ArrowRight, Star } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { CtaLink } from "@/components/cta-button";
-import heroWide from "@/assets/hero-lakeshore-wide.png";
+import heroWide from "@/assets/hero-lakeshore-wide.jpg";
 
 /**
  * Full-bleed lakeshore hero with a scroll parallax on the photo. The image is
