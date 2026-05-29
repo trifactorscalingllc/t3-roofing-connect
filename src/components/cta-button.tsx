@@ -6,7 +6,7 @@ type Variant = "primary" | "outline" | "outlineLight";
 
 const styles: Record<Variant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:bg-accent",
+    "bg-accent text-white hover:bg-accent-hover",
   outline:
     "border border-primary text-primary hover:bg-primary hover:text-primary-foreground",
   outlineLight:
@@ -14,7 +14,7 @@ const styles: Record<Variant, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3.5 text-sm font-bold uppercase tracking-[0.15em] transition-colors";
+  "inline-flex items-center justify-center gap-2 rounded-none px-6 py-3.5 text-sm font-bold uppercase tracking-[0.04em] transition-colors";
 
 export function CtaLink({
   to,

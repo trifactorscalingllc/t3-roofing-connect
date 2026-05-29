@@ -61,7 +61,7 @@ export function HowItWorks() {
           {STEPS.map((s, i) => (
             <div key={s.title} className="relative bg-background p-8">
               <div className="flex items-center gap-4">
-                <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-primary text-cream font-[var(--font-display)] text-2xl leading-none">
+                <span className="flex h-12 w-12 flex-none items-center justify-center bg-accent text-white font-[var(--font-display)] text-2xl leading-none">
                   {i + 1}
                 </span>
                 <s.icon className="h-7 w-7 text-accent" />
@@ -93,14 +93,14 @@ const STATS = [
 
 export function StatsBand() {
   return (
-    <section className="bg-[var(--ink)] text-cream">
+    <section className="bg-navy text-cream">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 md:grid-cols-4 md:px-8">
         {STATS.map((s) => (
           <div key={s.label} className="border-l-2 border-accent pl-6">
             <div className="text-5xl md:text-6xl text-accent font-[var(--font-display)] leading-none">
               {s.stat}
             </div>
-            <div className="mt-3 text-sm uppercase tracking-wider text-cream/80">
+            <div className="mt-3 text-sm uppercase tracking-wider text-muted-on-dark">
               {s.label}
             </div>
           </div>
@@ -137,11 +137,11 @@ const REASONS = [
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-card border-y border-border">
+    <section className="bg-background">
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">
+            <div className="text-[0.8125rem] uppercase tracking-[0.15em] text-accent font-semibold">
               Why T3
             </div>
             <h2 className="mt-3 text-5xl md:text-6xl uppercase">Why choose us</h2>
@@ -153,14 +153,9 @@ export function WhyChooseUs() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {REASONS.map((r, i) => (
-            <div key={r.title} className="bg-background p-7 border-t-2 border-accent">
-              <div className="flex items-center justify-between">
-                <r.icon className="h-8 w-8 text-accent" />
-                <span className="font-[var(--font-display)] text-3xl text-muted-foreground/40">
-                  0{i + 1}
-                </span>
-              </div>
+          {REASONS.map((r) => (
+            <div key={r.title} className="bg-surface p-7 border border-border border-t-2 border-t-accent">
+              <r.icon className="h-9 w-9 text-accent" />
               <h3 className="mt-5 text-2xl uppercase leading-tight">{r.title}</h3>
               <p className="mt-2 text-sm text-foreground/70">{r.body}</p>
             </div>
@@ -198,7 +193,7 @@ export function ProjectsPreview() {
           {tiles.map((p, i) => (
             <figure
               key={i}
-              className="group relative aspect-[4/3] overflow-hidden bg-card"
+              className="group relative aspect-[4/3] overflow-hidden border border-border bg-surface"
             >
               <img
                 src={p.src}
@@ -223,31 +218,31 @@ export function ProjectsPreview() {
 
 export function ServiceAreaMap() {
   return (
-    <section className="bg-[var(--ink)] text-cream">
+    <section className="bg-background">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-2 md:gap-16 md:px-8 md:py-28">
         <div>
-          <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold">
+          <div className="text-[0.8125rem] uppercase tracking-[0.15em] text-accent font-semibold">
             Where we work
           </div>
           <h2 className="mt-3 text-5xl md:text-6xl uppercase">The Lakeshore</h2>
-          <p className="mt-6 max-w-md text-cream/75">
+          <p className="mt-6 max-w-md text-foreground/75">
             Based in Two Rivers and serving Manitowoc County and the Lake Michigan
             shoreline communities.
           </p>
           <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-3">
             {SITE.serviceArea.map((c) => (
-              <li key={c} className="flex items-center gap-2 text-cream/90">
+              <li key={c} className="flex items-center gap-2 text-foreground">
                 <MapPin className="h-4 w-4 text-accent" /> {c}, WI
               </li>
             ))}
           </ul>
           <div className="mt-10">
-            <CtaLink href={SITE.phoneHref} variant="outlineLight">
+            <CtaLink href={SITE.phoneHref} variant="outline">
               <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
             </CtaLink>
           </div>
         </div>
-        <div className="min-h-[320px] overflow-hidden border border-cream/15">
+        <div className="min-h-[320px] overflow-hidden border border-border">
           <iframe
             title="T3 Roofing service area, Two Rivers WI"
             src="https://www.google.com/maps?q=Two+Rivers,+WI+54241&output=embed"
@@ -255,6 +250,37 @@ export function ServiceAreaMap() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* --------------------------------------------------------------------- CTA band */
+
+export function CtaBand() {
+  return (
+    <section className="bg-navy text-cream">
+      <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-4 py-16 md:flex-row md:items-center md:justify-between md:px-8 md:py-20">
+        <div>
+          <div className="text-[0.8125rem] uppercase tracking-[0.15em] text-accent font-semibold">
+            Free estimate
+          </div>
+          <h2 className="mt-3 text-4xl md:text-5xl uppercase leading-[0.95]">
+            Ready to get on the schedule?
+          </h2>
+          <p className="mt-4 max-w-xl text-muted-on-dark">
+            Tell us about the project. We answer the phone and give you a straight
+            answer, usually within one business day.
+          </p>
+        </div>
+        <div className="flex flex-none flex-col gap-3 sm:flex-row">
+          <CtaLink href={SITE.phoneHref} variant="primary">
+            <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
+          </CtaLink>
+          <CtaLink to="/contact" variant="outlineLight">
+            Free Estimate
+          </CtaLink>
         </div>
       </div>
     </section>

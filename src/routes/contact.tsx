@@ -161,7 +161,7 @@ function ContactPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex w-full items-center justify-center rounded-sm bg-primary px-6 py-4 text-sm font-bold uppercase tracking-[0.15em] text-primary-foreground transition-colors hover:bg-accent disabled:opacity-60 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center bg-accent px-6 py-4 text-sm font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-accent-hover disabled:opacity-60 sm:w-auto"
                 >
                   {submitting ? "Sending…" : "Send Estimate Request"}
                 </button>

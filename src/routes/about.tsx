@@ -67,7 +67,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--ink)] text-cream">
+      <section className="bg-navy text-cream">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 md:grid-cols-3 md:px-8">
           {[
             { stat: "5.0", label: "Star rating on Yelp & Birdeye" },
@@ -78,7 +78,7 @@ function AboutPage() {
               <div className="text-6xl md:text-7xl text-accent font-[var(--font-display)]">
                 {s.stat}
               </div>
-              <div className="mt-2 text-sm uppercase tracking-wider text-cream/80">
+              <div className="mt-2 text-sm uppercase tracking-wider text-muted-on-dark">
                 {s.label}
               </div>
             </div>
