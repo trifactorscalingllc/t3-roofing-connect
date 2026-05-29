@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, ArrowRight, Star } from "lucide-react";
-import { SITE, SERVICES } from "@/lib/site";
-import { CtaLink } from "@/components/cta-button";
+import { ArrowRight, Star } from "lucide-react";
+import { SERVICES } from "@/lib/site";
+import { Hero } from "@/components/hero";
 import {
   HowItWorks,
   StatsBand,
@@ -11,7 +11,6 @@ import {
   CtaBand,
   Faq,
 } from "@/components/home-sections";
-import heroWide from "@/assets/hero-lakeshore-wide.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,48 +36,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      {/* HERO — full-bleed lakeshore photo with ink gradient from the left */}
-      <section className="relative isolate overflow-hidden bg-ink">
-        <img
-          src={heroWide}
-          alt="Navy craftsman home with a new dark shingle roof on the Lake Michigan shoreline in Two Rivers, Wisconsin"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[var(--ink)]/85 to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 py-28 md:px-8 md:py-40 lg:py-48">
-          <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 text-[0.8125rem] uppercase tracking-[0.15em] text-accent font-semibold">
-              <span className="h-px w-8 bg-accent" />
-              Two Rivers, WI · Owner-Operated
-            </div>
-            <h1 className="mt-6 text-6xl md:text-7xl lg:text-8xl leading-[0.9] uppercase text-cream">
-              We pick up.<br />
-              <span className="text-accent">We show up.</span>
-            </h1>
-            <p className="mt-6 max-w-lg text-lg text-cream/80">
-              Roofing, siding and construction for the Wisconsin Lakeshore, done
-              right the first time. No voicemail tag. No "we'll get back to you next week."
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <CtaLink href={SITE.phoneHref} variant="primary">
-                <Phone className="h-4 w-4" />
-                Call {SITE.phoneDisplay}
-              </CtaLink>
-              <CtaLink to="/contact" variant="outlineLight">
-                Free Estimate <ArrowRight className="h-4 w-4" />
-              </CtaLink>
-            </div>
-            <div className="mt-10 flex items-center gap-3 text-sm text-cream/70">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                ))}
-              </div>
-              <span>5.0 on Yelp · "Did great job!" Julio L.</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* HERO — full-bleed lakeshore photo with scroll parallax */}
+      <Hero />
 
       {/* HOW IT WORKS */}
       <HowItWorks />
